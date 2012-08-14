@@ -2,6 +2,7 @@ require "encrypted_env/version"
 require 'encrypted_env/env'
 require 'encryptor'
 require 'base64'
+require 'encrypted_env/base64'
 
 ENV.send(:extend, EncryptedEnv::ENV)
 
