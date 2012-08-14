@@ -27,7 +27,7 @@ module EncryptedEnv
   def self.encrypt(value,options={})
     encrypted_value = Encryptor.encrypt(self.default_options.merge(options).merge(:value => value.to_s))
 
-    Base64.encode64 encrypted_value.to_s
+    Base64.strict_encode64 encrypted_value.to_s
   end
 
   # Decrypt a value already stored in the ENV.  The value is assumed be Base64 encoded

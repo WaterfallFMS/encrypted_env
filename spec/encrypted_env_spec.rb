@@ -48,7 +48,7 @@ describe EncryptedEnv do
 
     it 'should base64 encode the value before dumping in the ENV' do
       value = Encryptor.encrypt(:value => 'this is a test', :key => 'test')
-      Base64.should_receive(:encode64).with(value)
+      Base64.should_receive(:strict_encode64).with(value)
 
       EncryptedEnv.encrypt('this is a test', :key => 'test')
     end
