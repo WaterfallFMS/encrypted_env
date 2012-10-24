@@ -17,7 +17,7 @@ module EncryptedEnv
     def heroku(*args)
       heroku_opt = "-r #{options[:remote]}" if options[:remote]
       encrypt(*args) do |key,value|
-        puts %Q(heroku config:add #{heroku_opt} "#{key}=#{value}")
+        puts %Q(heroku config:set #{heroku_opt} #{key}=#{value})
       end
     end
 
