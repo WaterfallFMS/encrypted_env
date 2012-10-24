@@ -7,7 +7,7 @@ module EncryptedEnv
     method_option :key, :aliases => '-k', :type => :string, :required => true
     def bash(*args)
       encrypt(*args) do |key,value|
-        puts %Q(export "#{key}"="#{value}")
+        puts %Q(export #{key}=#{value})
       end
     end
 
